@@ -4,8 +4,13 @@ const PREZZO_PER_KM = 0.21;
 const SCONTO_OVER_65 = 40;
 const SCONTO_MINORENNI = 20;
 
+
+// prendo il form dal DOM 
+const formDOMElement = document.getElementById('myForm');
+console.log('il mio form', formDOMElement);
+
 // prendo il pulsante dal DOM 
-const btnDOMElement = document.getElementById('btn-calc')
+const btnDOMElement = document.getElementById('btn-calc');
 // console.log(btnDOMElement)
 // - chiedere all' utente i chilometri che vuole percorrere tramite un input quindi prendendolo dal DOM
 const inputDOMElement = document.getElementById('expected-km');
@@ -43,9 +48,15 @@ btnDOMElement.addEventListener('click', function () {
     }
     console.log('il total price a riga 46',totalPrice)
     
+    
+    // prendo il nome dal DOM 
+    // const nameDOMElement = document.getElementById('name');
     // prendo il  prezzo dal DOM 
     const prezzoDOMElement = document.querySelector('.price');
-    prezzoDOMElement.innerHTML = totalPrice.toFixed(2) + ' €';
+    
+    prezzoDOMElement.innerHTML ='Ciao' + 'il costo del tuo biglietto è: ' + totalPrice.toFixed(2) + ' €';
+    
+    
     
     
 })
