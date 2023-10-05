@@ -57,9 +57,9 @@ btnDOMElement.addEventListener('click', function (event) {
     
     prezzoDOMElement.innerHTML ='Ciao ' + nameDOMElement.value + ' il costo del tuo biglietto è: ' + totalPrice.toFixed(2) + ' €';
     
-    if (totalPrice != Number) {
-        prezzoDOMElement.innerHTML = 'Devi inserire un numero di KM';
-        console.log("messaggio di errore per il non numero", prezzoDOMElement)
-    }
-    console.log("total price è un numero?",(totalPrice != Number), typeof totalPrice)
+    // if (totalPrice != Number) {
+    //     prezzoDOMElement.innerHTML = 'Devi inserire un numero di KM';
+    //     console.log("messaggio di errore per il non numero", prezzoDOMElement)
+    // }
+    // console.log("total price è un numero?",(totalPrice != Number), typeof totalPrice)
 });
