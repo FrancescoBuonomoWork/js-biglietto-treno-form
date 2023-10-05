@@ -19,36 +19,31 @@ const selDOMElement = document.getElementById('discount');
 btnDOMElement.addEventListener('click', function () {
     // prendiamo dal click del bottone i km selezionati
     const km = parseFloat(inputDOMElement.value)
-    console.log(km)
+    console.log('km da percorrere',km)
     // calcoliamo il prezzo totale moltiplicando i km dichiarati * il prezzo al km 
-    const totalPrice = km * PREZZO_PER_KM
-    console.log(totalPrice)
+    let totalPrice = km * PREZZO_PER_KM
+    console.log('prezzo totale',totalPrice)
     // calcoliamo lo sconto
     let discount = selDOMElement.value
-    console.log(discount)
+    // console.log("discount", discount)
     // let discountRate = ((discount.value = 0) = SCONTO_MINORENNI )
 
     let discountRate = 0;
-    if (discount.value == 0) {
+
+    // console.log("condizione sconto minorenne", discount === 'minorenne');
+
+    if (discount === 'minorenne') {
         discountRate = totalPrice * SCONTO_MINORENNI / 100
-        
-        console.log(discountRate)
+        totalPrice = totalPrice - discountRate
+        console.log("il prezzo scontato per minorenni è ", totalPrice)
     }
-    else if (discount.value == 2) {
-        discountRate = SCONTO_OVER_65
-        console.log(discountRate)
+    else if (discount === 'over65') {
+        discountRate = totalPrice * SCONTO_OVER_65 / 100
+        console.log("discountRate", discountRate)
+        totalPrice = totalPrice - discountRate
+        console.log('il prezzo scontato per anziani è ',totalPrice)
     }
 
-    console.log(discountRate);
-    // if (age < 18) {
-    //     discount = totalPrice * SCONTO_MINORENNI / 100
-    //     console.log(discount)
-    //     totalPrice = totalPrice - discount
-
-    // } else if (age > 65) {
-
-    //     discount = totalPrice * SCONTO_OVER_65 / 100
-    //     console.log(discount)
-    //     totalPrice = totalPrice - discount
-    // }
+   
+  
 })
