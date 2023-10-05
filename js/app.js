@@ -10,8 +10,6 @@ const btnDOMElement = document.getElementById('btn-calc')
 // - chiedere all' utente i chilometri che vuole percorrere tramite un input quindi prendendolo dal DOM
 const inputDOMElement = document.getElementById('expected-km');
 // console.log('inputDOMElement');
-// prendo il  prezzo dal DOM 
-const prezzoDOMElement = document.querySelector('.price');
 // console.log(prezzoDOMElement);
 // prendo lo sconto dal DOM 
 const selDOMElement = document.getElementById('discount');
@@ -27,11 +25,11 @@ btnDOMElement.addEventListener('click', function () {
     let discount = selDOMElement.value
     // console.log("discount", discount)
     // let discountRate = ((discount.value = 0) = SCONTO_MINORENNI )
-
+    
     let discountRate = 0;
-
+    
     // console.log("condizione sconto minorenne", discount === 'minorenne');
-
+    
     if (discount === 'minorenne') {
         discountRate = totalPrice * SCONTO_MINORENNI / 100
         totalPrice = totalPrice - discountRate
@@ -43,7 +41,11 @@ btnDOMElement.addEventListener('click', function () {
         totalPrice = totalPrice - discountRate
         console.log('il prezzo scontato per anziani è ',totalPrice)
     }
-
-   
-  
+    console.log('il total price a riga 46',totalPrice)
+    
+    // prendo il  prezzo dal DOM 
+    const prezzoDOMElement = document.querySelector('.price');
+    prezzoDOMElement.innerHTML = totalPrice.toFixed(2) + ' €';
+    
+    
 })
