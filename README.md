@@ -1,7 +1,8 @@
 # Calcolatore prezzo del biglietto del treno usanto gli input
-- stabilire in una variabile il prezzo al km
-- chiedere all' utente i chilometri che vuole percorrere
-- chiedere all'utente la sua eta
+- stabilire in una variabile il prezzo al km e gli sconti tramite delle const 
+- prendere dal DOM pulsante input prezzo e sconto
+    - chiedere all' utente i chilometri che vuole percorrere tramite un input
+    - chiedere all'utente la sua eta
 
 - calcolare il prezzo che dovra pagare in base ai valori precedentemente dichiarati
     - stabilire in una variabile il prezzo al km        
