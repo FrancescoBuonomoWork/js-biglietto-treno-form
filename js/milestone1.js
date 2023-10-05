@@ -19,17 +19,15 @@ const inputDOMElement = document.getElementById('expected-km');
 // prendo lo sconto dal DOM 
 const selDOMElement = document.getElementById('discount');
 // al bottone aggiungere un evento click con il quale immagazzineremo i valori esposti dall'utente e calcoleremo il prezzo da pagare 
-btnDOMElement.addEventListener('click', function (event) {
-    event.preventDefault();
-
+btnDOMElement.addEventListener('click', function () {
     // prendiamo dal click del bottone i km selezionati
-    const km = parseFloat(inputDOMElement.value);
-    console.log('km da percorrere',km);
+    const km = parseFloat(inputDOMElement.value)
+    console.log('km da percorrere',km)
     // calcoliamo il prezzo totale moltiplicando i km dichiarati * il prezzo al km 
-    let totalPrice = km * PREZZO_PER_KM;
-    console.log('prezzo totale',totalPrice);
+    let totalPrice = km * PREZZO_PER_KM
+    console.log('prezzo totale',totalPrice)
     // calcoliamo lo sconto
-    let discount = selDOMElement.value;
+    let discount = selDOMElement.value
     // console.log("discount", discount)
     // let discountRate = ((discount.value = 0) = SCONTO_MINORENNI )
     
@@ -38,28 +36,27 @@ btnDOMElement.addEventListener('click', function (event) {
     // console.log("condizione sconto minorenne", discount === 'minorenne');
     
     if (discount === 'minorenne') {
-        discountRate = totalPrice * SCONTO_MINORENNI / 100;
-        totalPrice = totalPrice - discountRate;
-        console.log("il prezzo scontato per minorenni è ", totalPrice);
+        discountRate = totalPrice * SCONTO_MINORENNI / 100
+        totalPrice = totalPrice - discountRate
+        console.log("il prezzo scontato per minorenni è ", totalPrice)
     }
     else if (discount === 'over65') {
-        discountRate = totalPrice * SCONTO_OVER_65 / 100;
-        console.log("discountRate", discountRate);
-        totalPrice = totalPrice - discountRate;
-        console.log('il prezzo scontato per anziani è ',totalPrice);
+        discountRate = totalPrice * SCONTO_OVER_65 / 100
+        console.log("discountRate", discountRate)
+        totalPrice = totalPrice - discountRate
+        console.log('il prezzo scontato per anziani è ',totalPrice)
     }
-    console.log('il total price a riga 46',totalPrice);
+    console.log('il total price a riga 46',totalPrice)
+    
     
     // prendo il nome dal DOM 
-    const nameDOMElement = document.getElementById('name');
+    // const nameDOMElement = document.getElementById('name');
     // prendo il  prezzo dal DOM 
     const prezzoDOMElement = document.querySelector('.price');
     
-    prezzoDOMElement.innerHTML ='Ciao ' + nameDOMElement.value + ' il costo del tuo biglietto è: ' + totalPrice.toFixed(2) + ' €';
+    prezzoDOMElement.innerHTML ='Ciao ' + 'il costo del tuo biglietto è: ' + totalPrice.toFixed(2) + ' €';
     
-    if (totalPrice != Number) {
-        prezzoDOMElement.innerHTML = 'Devi inserire un numero di KM';
-        console.log("messaggio di errore per il non numero", prezzoDOMElement)
-    }
-    console.log("total price è un numero?",(totalPrice != Number), typeof totalPrice)
-});
+    
+    
+    
+})

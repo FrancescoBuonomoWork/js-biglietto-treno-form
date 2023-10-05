@@ -6,7 +6,7 @@
     <title>Biglietto treno form</title>
 </head>
 <body>
-    <div method="post" id="myForm">
+    <form id="myForm">
         <input type="text" name="name" id="name" placeholder="inserisci il tuo nome">
         <input type="text" name="km" id="expected-km" placeholder="Quanti km devi percorrere?" >
         <select name="discount" id="discount">
@@ -14,12 +14,11 @@
             <option value="maggiorenne">Maggiorenne</option>
             <option value="over65">Over 65</option>
         </select>
-        <button id="btn-calc">Calcola prezzo</button>
-
-    </div>
+        <button type="submit" id="btn-calc">Calcola prezzo</button>
+    </form>
     <div class="price">prezzo</div>
    
-
     <script src="js/app.js"></script>
+    <!-- <script src="js/milestone1.js"></script> -->
 </body>
 </html>
